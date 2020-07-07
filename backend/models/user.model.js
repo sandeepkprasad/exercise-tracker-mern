@@ -1,0 +1,13 @@
+const mongoose = require("mongoose");
+
+const Schema = mongoose.Schema; // Created Schema.
+
+const userSchema = new Schema({
+    username: {type: String, required: true, unique: true, trim: true, minlength: 3}
+}, {
+    timestamps: true
+});
+
+const User = mongoose.model("User", userSchema); // Created model.
+
+module.exports = User; // Exported model.
